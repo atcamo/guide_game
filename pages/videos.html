@@ -4,73 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" 
+    href="../style.css">
     <title>Guide Games - Videos</title>
 </head>
-<body class="grid">
-    <header class="header">
-        <div class="logo">
-            <img src="../image/logo.jpg" alt="Logo">
-        </div>
-        <h1 class="titulo">Videos</h1>
-        <div class="search">
-            <input type="search" placeholder="¿Qué desea buscar?">
-        </div>
-    </header>
-    <nav class="nav"> 
-        <ul>
-            <li>
-                <a href="../index.html">Guia Wemix</a>
-            </li>
-            <li>
-                <a href="juegos.html">Juegos</a>
-                    <ul>
-                        <li>
-                            <a href="../pages/Juegos/gunshipbattlecryptoconflict.html" >Gunship Battle Crypto Conflict</a>
+<body>
+    <div class="body">
+        <header class="container-fluid">
+            <div class="justify-content-evenly row row-cols-auto">
+                <div class="logo col">
+                    <img src="../image/logo.jpg" alt="Logo">
+                </div>
+                <div class="titulo col">
+                    <h1 class="animate__animated animate__zoomIn titulo" >VIDEOS</h1>
+                </div>
+                <div class="search col">
+                    <br>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: rgb(0,194,203);
+        background: linear-gradient(0deg, rgba(0,194,203,1) 0%, rgba(155,240,244,1) 51%, rgba(0,194,203,1) 100%);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text" aria-current="page" href="../index.html">HOME</a>
                         </li>
-                        <li>
-                            <a href="../pages/Juegos/asu.html">Anitas Security Union</a>
+                        <li class="nav-item">
+                            <a class="nav-link text" href="juegos.html">JUEGOS</a>
                         </li>
-                        <li>
-                            <a href="../pages/Juegos/ninokuni.html">Ni No Kuni Cross Worlds</a>
-                        </li>                     
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text" href="juegos.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item text" href="../pages/Juegos/gunshipbattlecryptoconflict.html">Gunship Battle Crypto Conflict</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text" href="../pages/Juegos/ninokuni.html">Another action> Ni No Kuni Cross Worlds</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text" href="#">NETMARBLE</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text" href="#">WEMIX</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text" href="videos.html">VIDEOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text" href="sobrenosotros.html">SOBRE NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text" href="contacto.html">CONTACTO</a>
+                        </li>
                     </ul>
-            </li>
-            <li>
-                <a href="videos.html">Videos</a>
-            </li>
-            <li>
-                <a href="sobrenosotros.html">Sobre Nosotros</a>
-            </li>
-            <li>
-                <a href="contacto.html">Contacto</a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <div id="container__descripcion">
-            <h2> Con la finalidad de tener un registro de los videos utiles en YouTube, se mantendra esta sección abierta para futuras consultas. Si desean que publiquemos sus videos o sugerirnos alguno que les parecio interesante pueden enviar los antecedentes en la sección <a href="../pages/contacto.html">CONTACTO</a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    <main class="flex row ">
+        <div class="container__descripcion col-12">
+            <h2 class="p-4"> Con la finalidad de tener un registro de los videos utiles en YouTube, se mantendra esta sección abierta para futuras consultas. Si desean que publiquemos sus videos o sugerirnos alguno que les parecio interesante pueden enviar los antecedentes en la sección <a href="../pages/contacto.html">CONTACTO</a>
             </h2>
         </div>
-        <div id="grid__videos">
-            <div>
+        <div class="flex row">
+            <div class="m-3 col">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/iuiDsU7F_G8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
-            <div>
+            <div class="m-3 col">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/_Xf2HALJ7Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
         </div>
     </main>
-    <footer class="footer">
+    <footer class="footer text-decoration-none">
         <div class="log_footer">
-            <a href="/index.html"><img src="../image/logo.jpg" alt="Logo"></a>
+            <a href="#"><img src="../image/logo.jpg" alt="Logo"></a>
         </div>
         <div> 
-            <ul class="footer__responsive">
+            <ul class="footer__responsive text-body">
                 <li>
-                    <a href="../index.html">Guia Wemix</a>
+                    <a href="../index.html">Guide Games</a>
                 </li>
                 <li>
                     <a href="juegos.html">Juegos</a>
@@ -89,8 +121,10 @@
         <div> 
             <ul>
                 <li>
-                    <a href="#">Facebook</a>
-                </li>
+                    <div class="redes">
+                    <a img src="image/facebook_1.png" href="#">Facebook</a>
+                    </div>
+                </li>   
                 <li>
                     <a href="#">Twitter</a>
                 </li>
@@ -100,5 +134,8 @@
             </ul>
         </div>    
     </footer>
+</div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
