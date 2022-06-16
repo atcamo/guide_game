@@ -19,24 +19,29 @@
 
 .body {
     background-image: white;
-            .animate__animated .animate__zoomIn {
-                --animate-duration: 2s;
+        .animate__animated .animate__zoomIn {
+        --animate-duration: 2s;
                 }
-            .logo   img {  
-                margin: 5px 0px 5px 5px;
-                width: 120px;
-                box-shadow: 0px 0px 20px 0px;
-                }
-            .titulo {
-                font-size: 10vh;
-                font-weight: 900;
-                color: #03354e;
-                background: linear-gradient(to right, #096b9c, #00C2CB);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                }
-}
+        .logo   img {  
+            margin: 5px 0px 5px 5px;
+            width: 120px;
+            box-shadow: 0px 0px 20px 0px;
+            &:hover {
+                transform: scale(0.5);
+                lighting-color: 05;
+            }
+
+                    }
+        .titulo {
+            font-size: 10vh;
+            font-weight: 900;
+            color: #03354e;
+            background: linear-gradient(to right, #096b9c, #00C2CB);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;                }
+        }
+
 /*NAV*/
 /*MAIN*/
 .flex {
@@ -123,8 +128,6 @@ audio {
         padding-left: 5px;
         max-width: 280px;
         font-size: 14px;
-        transition: all 800ms ease;
-        
     }
 }
 
@@ -155,7 +158,6 @@ audio {
         padding-left: 5px;
         max-width: 280px;
         font-size: 14px;
-        transition: all 800ms ease;
     }
 
     /*juegos*/
