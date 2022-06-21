@@ -1,3 +1,4 @@
+@import "variables"
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
@@ -35,8 +36,8 @@
         .titulo {
             font-size: 10vh;
             font-weight: 900;
-            color: #03354e;
-            background: linear-gradient(to right, #096b9c, #00C2CB);
+            color: $azulOscuro;
+            background: linear-gradient(to right, $azulOpaco, $azulClaro;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;                }
@@ -59,7 +60,7 @@
 .aside {
     width: 30vh;
     height: 100%;
-    border:1px solid #00C2CB;
+    border:1px solid $azulClaro;
 }
 
 /*FOOTER*/
@@ -68,7 +69,7 @@
     display: flex;
     justify-content:space-around;
     height: 18vh;
-    background: #00C2CB;
+    background-color: $azulClaro;
     box-shadow: 0px 0px 10px 0px;
         .log_footer img {
             flex-direction: column;
@@ -92,7 +93,7 @@ fieldset {
 }
 
 .container__caja {
-    background: #096b9c;
+    background-color: $azulOpaco;
     color: white;
     width: 600px;
     font-size: 20px;
@@ -109,11 +110,11 @@ audio {
 }
  
 .container__descripcion {
-    background: white;
+    background-color: white;
     box-shadow: 0px 10px 10px 0px;
     width: 100%;
     height: min-content;
-    border: 1px cornflowerblue;
+    border: 1px $azulClaro;
 }
 
 
