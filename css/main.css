@@ -26,16 +26,18 @@ fieldset {
 
 /*SOBRE NOSOTROS*/
 audio {
+  position: absolute;
   visibility: hidden;
 }
 
-.container__caja {
-  background-color: #096b9c;
-  color: white;
-  width: 600px;
-  font-size: 20px;
-  margin: 10px 0 10px 20px;
-  padding: 10px 10px 20px 50px;
+.container__descripcion {
+  padding-left: 50px;
+  font-size: 18x;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  box-shadow: 0px 0px 10px 0px;
 }
 
 /*HEADER*/
@@ -70,6 +72,7 @@ audio {
   padding: 1px;
   box-shadow: 0px 0px 10px 0px #00C2CB;
   margin-bottom: 5px;
+  opacity: 0.95;
 }
 
 .aside {
@@ -98,6 +101,21 @@ audio {
   font-size: 16px;
 }
 
+.backNino {
+  background-image: url(/image/backnino.webp);
+  background-size: cover;
+}
+
+.backGunship {
+  background-image: url(/image/backgunship.webp);
+  background-size: cover;
+}
+
+.backBot {
+  background-image: url(/image/bot.jpg);
+  background-size: cover;
+}
+
 @media (max-width: 320px) {
   .container__caja {
     margin-left: 5px;
@@ -105,40 +123,36 @@ audio {
     max-width: 280px;
     font-size: 14px;
   }
+  .footer__responsive {
+    display: none;
+  }
 }
 @media (min-width: 320px) and (max-width: 640px) {
   /*header*/
   .titulo {
     font-size: 35px;
   }
-
-  main > div > div > a > img {
-    /*no es index*/
+  main > div > div > a > img { /*no es index*/
     transform: scale(0.8);
   }
-
   .aside {
     display: none;
   }
-
   /*footer*/
   .log_footer {
     margin: 2px 0px 0px 2px;
     transform: scale(0.8);
     transition: all 800ms ease;
   }
-
   .footer__responsive {
-    font-size: 13px;
+    display: none;
   }
-
   .container__caja {
     margin-left: 5px;
     padding-left: 5px;
     max-width: 280px;
     font-size: 14px;
   }
-
   /*juegos*/
   /*videos*/
   iframe {
@@ -150,12 +164,10 @@ audio {
   .main__index {
     width: 100%;
   }
-
   .aside {
     display: none;
     transition: all 800ms ease;
   }
-
   .card {
     display: block;
   }

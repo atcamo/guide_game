@@ -6,6 +6,10 @@
         max-width: 280px;
         font-size: 14px;
     }
+    .footer__responsive {
+        display: none;
+    }
+
 }
 
 
@@ -28,7 +32,7 @@
         transition: all 800ms ease;
     }
     .footer__responsive {
-        font-size: 13px;
+        display: none;
     }
 
     .container__caja {
