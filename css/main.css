@@ -111,11 +111,6 @@ audio {
   background-size: cover;
 }
 
-.backBot {
-  background-image: url(/image/bot.jpg);
-  background-size: cover;
-}
-
 @media (max-width: 320px) {
   .container__caja {
     margin-left: 5px;
@@ -129,9 +124,6 @@ audio {
 }
 @media (min-width: 320px) and (max-width: 640px) {
   /*header*/
-  .titulo {
-    font-size: 35px;
-  }
   main > div > div > a > img { /*no es index*/
     transform: scale(0.8);
   }
@@ -161,14 +153,21 @@ audio {
   }
 }
 @media (min-width: 641px) and (max-width: 920px) {
+  .titulo {
+    font-weight: 200vh;
+  }
   .main__index {
     width: 100%;
   }
   .aside {
     display: none;
-    transition: all 800ms ease;
   }
   .card {
     display: block;
+  }
+}
+@media (min-width: 921px) and (max-width: 1400px) {
+  .aside {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

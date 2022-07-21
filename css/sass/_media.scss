@@ -16,9 +16,6 @@
 @media (min-width:320px) and (max-width: 640px) {
 
     /*header*/
-    .titulo {
-        font-size: 35px;
-    }
     main > div > div > a > img {    /*no es index*/
         transform: scale(0.8);
     }   
@@ -53,19 +50,25 @@
 }
 
 @media (min-width:641px) and (max-width: 920px) {
+
+    .titulo {
+        font-weight: 200vh;
+    }
     .main__index {
         width: 100%;
     }
     .aside {
         display: none;
-        transition: all 800ms ease;
+    
     }
     .card {
         display:block;
     }
+} 
+
+@media (min-width:921px) and (max-width: 1400px){
+    .aside {
+        display: none;
+    }
+    
 }
-
-@media (min-width:921px) {
-
-}
-
