@@ -48,6 +48,8 @@
 
 
 /*FOOTER*/
+
+
 .footer {
     color: black;
     display: flex;
@@ -64,6 +66,14 @@
         }
         .footer__responsive {
             font-size: 16px;
+            
+        }
+
+        a {
+            text-decoration-line: none;
+             &:hover {
+                text-transform: uppercase;
+                color: white;
         }
         
 

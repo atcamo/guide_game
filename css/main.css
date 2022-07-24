@@ -100,6 +100,21 @@ audio {
 .footer .footer__responsive {
   font-size: 16px;
 }
+.footer a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+.footer a:hover {
+  text-transform: uppercase;
+  color: white;
+  border-radius: 45%;
+}
+.footer a:hover border {
+  top: 0px;
+  right: 1px;
+  left: 1px;
+  bottom: 0px;
+}
 
 .backNino {
   background-image: url(/image/backnino.webp);
