@@ -69,23 +69,25 @@
             
         }
 
-        a {
-            text-decoration-line: none;
-             &:hover {
-                text-transform: uppercase;
-                color: white;
-        }
-        
-
 }
+
+
+a {
+    text-decoration-line: none;
+     &:hover {
+        text-transform: uppercase;
+        color: white;
+     }
+}
+ 
 
 .backNino { 
     background-image: url(/image/backnino.webp);
-    background-size:cover
+    background-size:cover;
 }
 
 .backGunship { 
     background-image: url(/image/backgunship.webp);
-    background-size:cover
+    background-size:cover;
 }
 
