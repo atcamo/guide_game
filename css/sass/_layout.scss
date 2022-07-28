@@ -57,7 +57,7 @@
     height: 18vh;
     background-color: $azul-claro;
     box-shadow: 0px 0px 10px 0px;
-        .log_footer img {
+        img {
             flex-direction: column;
             margin: 5px 0px 0px 5px;
             width: 100px;
@@ -66,19 +66,17 @@
         }
         .footer__responsive {
             font-size: 16px;
-            
         }
-
+        a {
+            text-decoration-line: none;
+             &:hover {
+                text-transform: uppercase;
+                 color: white;
+            }
+        
+        }
 }
 
-
-a {
-    text-decoration-line: none;
-     &:hover {
-        text-transform: uppercase;
-        color: white;
-     }
-}
  
 
 .backNino { 

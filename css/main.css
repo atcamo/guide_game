@@ -90,7 +90,7 @@ audio {
   background-color: #00C2CB;
   box-shadow: 0px 0px 10px 0px;
 }
-.footer .log_footer img {
+.footer img {
   flex-direction: column;
   margin: 5px 0px 0px 5px;
   width: 100px;
@@ -100,12 +100,11 @@ audio {
 .footer .footer__responsive {
   font-size: 16px;
 }
-
-a {
+.footer a {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
-a:hover {
+.footer a:hover {
   text-transform: uppercase;
   color: white;
 }
