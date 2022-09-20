@@ -54,6 +54,8 @@ const destructores = [sovremenny, ticonderoga, arleighBurke, daring]
 
 const buques = [fragatas, destructores, submarinos] 
 
+
+
 function seleccionUnidad() {
     let tipoBuque;
 
@@ -71,7 +73,7 @@ function seleccionUnidad() {
                     alert(JSON.stringify(duke, null, 4)); 
                 } else if (tipoFragata == 4){
                     alert(JSON.stringify(independence, null, 4)); 
-            }  /*         
+            }         
         } else if (tipoBuque == 2){
             tipoSubmarino = (prompt("Submarinos disponibles:\n1)Los Angeles\n2)Trafalgar\n3)Seawolf\n4)Typhoon"))
                 if (tipoSubmarino == 1){
@@ -93,8 +95,13 @@ function seleccionUnidad() {
                     alert(JSON.stringify(arleighBurke, null, 4)); 
                 } else if (tipoDestructor == 4){
                     alert(JSON.stringify(daring, null, 4)); 
-            } */
+            } 
+    }
+    alert ('Se detecto una manipulación en nuestro registros, por favor presione tres veces aceptar para identificarse como humano');
+
+    for (let i = 3; i > 0; i--) {
+        alert (i);
     }
 }
 
-
+let seleccion = seleccionUnidad (); 
