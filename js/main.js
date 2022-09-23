@@ -54,10 +54,18 @@ const destructores = [sovremenny, ticonderoga, arleighBurke, daring]
 
 const buques = [fragatas, destructores, submarinos] 
 
+    /*Prompt alert confirm concatenacion ingreso*/
+let confirmar = confirm('Esta ingresando en un area restringida, ¿es parte del personal autorizado?')
+if (confirmar) {
+     alert ('Has clickado OK, necesitamos confirmar su identidad:');
+        let nombre = prompt('Nombres:')
+        let apellido= prompt ('Apellidos:')
+            alert (`Almirante ${nombre} ${apellido} se ha autorizado su ingreso`)
 
+    /*While if*/
+    function seleccionUnidad() {
 
-function seleccionUnidad() {
-    let tipoBuque;
+        let tipoBuque;
 
     do {
         tipoBuque = (prompt("Bienvenido, ha ingresado a la base de datos de la armada, indiquenos que tipo de unidad militar necesita revisar:\n1)Fragata\n2)Submarinos\n3)Destructor"))
@@ -97,11 +105,147 @@ function seleccionUnidad() {
                     alert(JSON.stringify(daring, null, 4)); 
             } 
     }
-    alert ('Se detecto una manipulación en nuestro registros, por favor presione tres veces aceptar para identificarse como humano');
 
-    for (let i = 3; i > 0; i--) {
-        alert (i);
+//Metodos y operaciones
+
+class Producto {
+    constructor (id, nombre, precio, stock){
+        this.id= id;
+        this.nombre= nombre;
+        this.precio= Number(precio);
+        this.stock= stock;
+    }
+    actualizarStock(cantidad){
+        this.stock= this.stock - cantidad;
     }
 }
 
+const arrayProductos = [];
+arrayProductos.push(new Producto (1, 'Knox', 10, 200));
+arrayProductos.push(new Producto (2, 'Oliver', 35, 100));
+arrayProductos.push(new Producto (3, 'Duke', 120, 50));
+arrayProductos.push(new Producto (3, 'Independence', 450, 25));
+
+//Precio: Menor a MAyor
+const ordenarMenorMayor = () => {
+    arrayProductos.sort((a,b)=> a.precio - b.precio);
+    mostrarListaOrdenada();
+}
+
+//Precio: Mayor a menor
+const ordenarMayorMenor = () => {
+    arrayProductos.sort((a,b)=> b.precio - a.precio);
+    mostrarListaOrdenada();
+}
+
+const mostrarListaOrdenada = () => {
+    let array = [];
+    arrayProductos.forEach(producto => array.push(producto.nombre+" $"+producto.precio + ' Bitcoin'));
+    alert("Lista de precios:"+"\n"+array.join("\n"))
+}
+
+const agregarProductos = () => {
+    let otroProducto;
+    let productoNombre = "";
+    let productoCantidad = 0;
+    let total = 0;
+
+    do {
+        productoNombre = prompt ('Por el momento solo podemos ofrecer fragatas, ¿que desea solicitar?:\na)Knox\nb)Oliver \nc)Duke\nd)Independence');
+        productoCantidad = parseInt(prompt('¿Cuántos solicitara?'));
+
+        while (Number.isNaN(productoCantidad)) {
+            productoCantidad = parseInt(prompt ('¿Cuántos solicitara?'));
+        }
+
+        const producto = arrayProductos.find(producto => producto.nombre === productoNombre);
+
+        if (producto) {
+            total += producto.precio * productoCantidad;
+            sincronizarStock(producto.nombre, productoCantidad, producto.stock);
+        } else {
+            alert('El producto no se encuentra en el catálogo.')
+        }
+
+        otroProducto = confirm('Desea agregar otro buque?');
+    } while (otroProducto)
+
+    obtenerDescuento(total);
+
+};
+
+const obtenerDescuento = (total) => {
+    if (total>=5000){
+        total = total*0.90;
+        alert("Por rango se aplicara un 10% de descuento");
+    }
+    obtenerPrecioDeEnvio(total);
+}
+
+const obtenerPrecioDeEnvio = (total) => {
+    let confirmacion = confirm("¿Se solicita para una misión fuera de nuestro pais?");
+    if (confirmacion && total>=500){
+        alert("La Industria manufacturera aplica envío gratis por su compra $"+total);
+    }else if (confirmacion && total<500 && total!=0){
+        total=total+5;
+        alert("El envío cuesta $700. El total de tu compra asciende a $"+total);
+    }else{
+        alert("El total de tu compra es $"+total);
+    }
+}
+
+const sincronizarStock = (producto, cantidad, stock) => {
+    switch (producto) {
+        case arrayProductos[0].nombre:
+            if (cantidad <= stock && arrayProductos[0].stock > 0) {
+                arrayProductos[0].actualizarStock(cantidad);
+            } else {
+                alert("No hay stock suficiente de este producto.")
+            }
+            break;
+        case arrayProductos[1].nombre:
+            if (cantidad <= stock && arrayProductos[1].stock > 0) {
+                arrayProductos[1].actualizarStock(cantidad);
+            } else {
+                alert("No hay stock suficiente de este producto.")
+            }
+            break;
+        case arrayProductos[2].nombre:
+            if (cantidad <= stock && arrayProductos[2].stock > 0) {
+                arrayProductos[2].actualizarStock(cantidad);
+            } else {
+                alert("No hay stock suficiente de este producto.")
+            }
+            break;
+    }
+};
+
+const comprar = () => {
+    if (confirm("¿Desea revisar nuestra lista de buques disponibles en orden de valor?")){
+        ordenarMenorMayor();
+    }else{
+        ordenarMayorMenor();
+    }
+    agregarProductos();
+}
+
+comprar();
+
+
+
+
+    /*iteracion*/  
+    alert ('Se detecto una manipulación en nuestro registros, por favor presione tres veces aceptar para identificarse como humano');
+  
+    for (let i = 3; i > 0; i--) {
+        alert (i);
+    }
+    }
+
+   
+    } else {
+    alert ('Puede seguir revisando el resto de la página');
+}
+
 let seleccion = seleccionUnidad (); 
+
