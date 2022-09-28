@@ -1,5 +1,3 @@
-
-
 /*Funcion contructora*/
 function Buques (atqAntiaereo, atqAntiterrestre, atqBuques, probCriticos, dañoPortaviones, blindaje, durabilidad, velEvasion, precision, capArmamento, velNavegacion, compTactica, recAutomatica, capAlmacenamiento, velRecoleccion ) {
     this.atqAntiaereo       = atqAntiaereo;
@@ -54,13 +52,18 @@ const destructores = [sovremenny, ticonderoga, arleighBurke, daring]
 
 const buques = [fragatas, destructores, submarinos] 
 
-    /*Prompt alert confirm concatenacion ingreso*/
+
+  /*Prompt alert confirm concatenacion ingreso*/
+
+let titulo = document.getElementById('parrafo1');
+
 let confirmar = confirm('Esta ingresando en un area restringida, ¿es parte del personal autorizado?')
 if (confirmar) {
      alert ('Has clickado OK, necesitamos confirmar su identidad:');
         let nombre = prompt('Nombres:')
         let apellido= prompt ('Apellidos:')
-            alert (`Almirante ${nombre} ${apellido} se ha autorizado su ingreso`)
+
+titulo.innerText = ' Bienvenido Almirante '  + nombre + ' ' +  apellido ;
 
     /*While if*/
     function seleccionUnidad() {
@@ -241,11 +244,32 @@ comprar();
         alert (i);
     }
     }
+//dom 
+    let seleccion = seleccionUnidad (); 
+
+ const productos = [{ id: 1,  nombre: "knox", precio: 10, stox: 200 },
+                  {  id: 2,  nombre: "Oliver", precio: 35, stox: 100},
+                   {  id: 3,  nombre: "Duke"  , precio: 120, stock: 50},
+                  {  id: 4,  nombre: "Independence" , precio: 450, stock: 25}];
+
+for (const producto of productos) {
+        let div = document.createElement('div');
+  
+        div.innerHTML = `
+            <div class="container">
+                <h3> ID: ${producto.id}</h3>
+               <p> Producto: ${producto.nombre}</p>
+                 <b>$ ${producto.precio}</b>
+                 <b>$ ${producto.stock}</b>
+             </div>
+                 `;
+    
+         document.body.appendChild(div);
+     }
+
 
    
     } else {
     alert ('Puede seguir revisando el resto de la página');
 }
-
-let seleccion = seleccionUnidad (); 
 
