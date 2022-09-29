@@ -247,8 +247,8 @@ comprar();
 //dom 
     let seleccion = seleccionUnidad (); 
 
- const productos = [{ id: 1,  nombre: "knox", precio: 10, stox: 200 },
-                  {  id: 2,  nombre: "Oliver", precio: 35, stox: 100},
+ const productos = [{ id: 1,  nombre: "knox", precio: 10, stock: 200 },
+                  {  id: 2,  nombre: "Oliver", precio: 35, stock: 100},
                    {  id: 3,  nombre: "Duke"  , precio: 120, stock: 50},
                   {  id: 4,  nombre: "Independence" , precio: 450, stock: 25}];
 
@@ -257,10 +257,10 @@ for (const producto of productos) {
   
         div.innerHTML = `
             <div class="container">
-                <h3> ID: ${producto.id}</h3>
-               <p> Producto: ${producto.nombre}</p>
-                 <b>$ ${producto.precio}</b>
-                 <b>$ ${producto.stock}</b>
+                <h3> ${producto.nombre}</h3>
+               <p> ID: ${producto.id}</p>
+                 <b>Precio: $ ${producto.precio}</b>
+                 <b>Stock: $ ${producto.stock}</b>
              </div>
                  `;
     
