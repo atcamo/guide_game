@@ -52,224 +52,274 @@ const destructores = [sovremenny, ticonderoga, arleighBurke, daring]
 
 const buques = [fragatas, destructores, submarinos] 
 
-
-  /*Prompt alert confirm concatenacion ingreso*/
+let formulario = document.getElementById('form');
 
 let titulo = document.getElementById('parrafo1');
 
-let confirmar = confirm('Esta ingresando en un area restringida, ¿es parte del personal autorizado?')
-if (confirmar) {
-     alert ('Has clickado OK, necesitamos confirmar su identidad:');
-        let nombre = prompt('Nombres:')
-        let apellido= prompt ('Apellidos:')
+const boton = document.getElementById('boton');
 
-titulo.innerText = ' Bienvenido Almirante '  + nombre + ' ' +  apellido ;
-
-    /*While if*/
-    function seleccionUnidad() {
-
-        let tipoBuque;
-
-    do {
-        tipoBuque = (prompt("Bienvenido, ha ingresado a la base de datos de la armada, indiquenos que tipo de unidad militar necesita revisar:\n1)Fragata\n2)Submarinos\n3)Destructor"))
-    } while(tipoBuque != 1 && tipoBuque != 2 && tipoBuque != 2)
-
-        if (tipoBuque == 1){
-           tipoFragata = (prompt("Fragatas disponibles:\n1)Knox\n2)Oliver Hazard\n3)Duke\n4)Independense"))
-                if (tipoFragata == 1){
-                    alert(JSON.stringify(knox, null, 4));  
-                } else if (tipoFragata == 2){
-                    alert(JSON.stringify(oliverHazard, null, 4)); 
-                } else if (tipoFragata == 3){
-                    alert(JSON.stringify(duke, null, 4)); 
-                } else if (tipoFragata == 4){
-                    alert(JSON.stringify(independence, null, 4)); 
-            }         
-        } else if (tipoBuque == 2){
-            tipoSubmarino = (prompt("Submarinos disponibles:\n1)Los Angeles\n2)Trafalgar\n3)Seawolf\n4)Typhoon"))
-                if (tipoSubmarino == 1){
-                    alert(JSON.stringify(losAngeles, null, 4));  
-                } else if (tipoSubmarino == 2){
-                    alert(JSON.stringify(trafalgar, null, 4)); 
-                } else if (tipoSubmarino == 3){
-                    alert(JSON.stringify(seawolf, null, 4)); 
-                } else if (tipoSubmarino == 4){
-                    alert(JSON.stringify(typhoon, null, 4)); 
-            }           
-        } else if (tipoBuque == 3){
-            tipoDestructor = (prompt("Destructores disponibles:\n1)Sovremenny\n2)Ticonderoga\n3)Arleigh Burke\n4)Daring"))
-                if (tipoDestructor == 1){
-                    alert(JSON.stringify(sovremenny, null, 4));  
-                } else if (tipoDestructor == 2){
-                    alert(JSON.stringify(ticonderoga, null, 4)); 
-                } else if (tipoDestructor == 3){
-                    alert(JSON.stringify(arleighBurke, null, 4)); 
-                } else if (tipoDestructor == 4){
-                    alert(JSON.stringify(daring, null, 4)); 
-            } 
-    }
-
-//Metodos y operaciones
-
-class Producto {
-    constructor (id, nombre, precio, stock){
-        this.id= id;
-        this.nombre= nombre;
-        this.precio= Number(precio);
-        this.stock= stock;
-    }
-    actualizarStock(cantidad){
-        this.stock= this.stock - cantidad;
-    }
+boton.onclick = () => {
+    titulo.innerText = 'Has clickado OK, necesitamos confirmar su identidad:';
+    titulo.style.color="green";
+    boton.remove();
+    formulario.style.display='block';    
 }
 
-const arrayProductos = [];
-arrayProductos.push(new Producto (1, 'Knox', 10, 200));
-arrayProductos.push(new Producto (2, 'Oliver', 35, 100));
-arrayProductos.push(new Producto (3, 'Duke', 120, 50));
-arrayProductos.push(new Producto (3, 'Independence', 450, 25));
 
-//Precio: Menor a MAyor
-const ordenarMenorMayor = () => {
-    arrayProductos.sort((a,b)=> a.precio - b.precio);
-    mostrarListaOrdenada();
-}
-
-//Precio: Mayor a menor
-const ordenarMayorMenor = () => {
-    arrayProductos.sort((a,b)=> b.precio - a.precio);
-    mostrarListaOrdenada();
-}
-
-const mostrarListaOrdenada = () => {
-    let array = [];
-    arrayProductos.forEach(producto => array.push(producto.nombre+" $"+producto.precio + ' Bitcoin'));
-    alert("Lista de precios:"+"\n"+array.join("\n"))
-}
-
-const agregarProductos = () => {
-    let otroProducto;
-    let productoNombre = "";
-    let productoCantidad = 0;
-    let total = 0;
-
-    do {
-        productoNombre = prompt ('Por el momento solo podemos ofrecer fragatas, ¿que desea solicitar?:\na)Knox\nb)Oliver \nc)Duke\nd)Independence');
-        productoCantidad = parseInt(prompt('¿Cuántos solicitara?'));
-
-        while (Number.isNaN(productoCantidad)) {
-            productoCantidad = parseInt(prompt ('¿Cuántos solicitara?'));
-        }
-
-        const producto = arrayProductos.find(producto => producto.nombre === productoNombre);
-
-        if (producto) {
-            total += producto.precio * productoCantidad;
-            sincronizarStock(producto.nombre, productoCantidad, producto.stock);
-        } else {
-            alert('El producto no se encuentra en el catálogo.')
-        }
-
-        otroProducto = confirm('Desea agregar otro buque?');
-    } while (otroProducto)
-
-    obtenerDescuento(total);
-
-};
-
-const obtenerDescuento = (total) => {
-    if (total>=5000){
-        total = total*0.90;
-        alert("Por rango se aplicara un 10% de descuento");
-    }
-    obtenerPrecioDeEnvio(total);
-}
-
-const obtenerPrecioDeEnvio = (total) => {
-    let confirmacion = confirm("¿Se solicita para una misión fuera de nuestro pais?");
-    if (confirmacion && total>=500){
-        alert("La Industria manufacturera aplica envío gratis por su compra $"+total);
-    }else if (confirmacion && total<500 && total!=0){
-        total=total+5;
-        alert("El envío cuesta $700. El total de tu compra asciende a $"+total);
-    }else{
-        alert("El total de tu compra es $"+total);
-    }
-}
-
-const sincronizarStock = (producto, cantidad, stock) => {
-    switch (producto) {
-        case arrayProductos[0].nombre:
-            if (cantidad <= stock && arrayProductos[0].stock > 0) {
-                arrayProductos[0].actualizarStock(cantidad);
-            } else {
-                alert("No hay stock suficiente de este producto.")
-            }
-            break;
-        case arrayProductos[1].nombre:
-            if (cantidad <= stock && arrayProductos[1].stock > 0) {
-                arrayProductos[1].actualizarStock(cantidad);
-            } else {
-                alert("No hay stock suficiente de este producto.")
-            }
-            break;
-        case arrayProductos[2].nombre:
-            if (cantidad <= stock && arrayProductos[2].stock > 0) {
-                arrayProductos[2].actualizarStock(cantidad);
-            } else {
-                alert("No hay stock suficiente de este producto.")
-            }
-            break;
-    }
-};
-
-const comprar = () => {
-    if (confirm("¿Desea revisar nuestra lista de buques disponibles en orden de valor?")){
-        ordenarMenorMayor();
-    }else{
-        ordenarMayorMenor();
-    }
-    agregarProductos();
-}
-
-comprar();
-
-
-
-
-    /*iteracion*/  
-    alert ('Se detecto una manipulación en nuestro registros, por favor presione tres veces aceptar para identificarse como humano');
+// let div = document.createElement('div');
   
-    for (let i = 3; i > 0; i--) {
-        alert (i);
-    }
-    }
-//dom 
-    let seleccion = seleccionUnidad (); 
+//             div.innerHTML = `
+//                 <div class="card">
+//                     <img class="responsive" src="${producto.img}">
+//                     <h3> ${producto.nombre}</h3>
+//                    <p> ID: ${producto.id}</p>
+//                      <b>Precio: $ ${producto.precio}</b>
+//                      <b>Stock: $ ${producto.stock}</b>
+//                  </div>
+//                      `;
+        
+//              document.body.appendChild(div);
 
- const productos = [{ id: 1,  nombre: "knox", precio: 10, stock: 200 },
-                  {  id: 2,  nombre: "Oliver", precio: 35, stock: 100},
-                   {  id: 3,  nombre: "Duke"  , precio: 120, stock: 50},
-                  {  id: 4,  nombre: "Independence" , precio: 450, stock: 25}];
 
-for (const producto of productos) {
-        let div = document.createElement('div');
-  
-        div.innerHTML = `
-            <div class="container">
-                <h3> ${producto.nombre}</h3>
-               <p> ID: ${producto.id}</p>
-                 <b>Precio: $ ${producto.precio}</b>
-                 <b>Stock: $ ${producto.stock}</b>
-             </div>
-                 `;
+             
+//              const input1 = document.getElementsByName('nombre');
+//              const input2 = document.getElementsByName('edad');
+             
+//              input1.addEventListener('change', (e) => {
+//                  console.log(e.target.value);
+//              })
+             
+//              input2.addEventListener('change', (e) => {
+//                  console.log(e.target.value);
+//              })
+
+
+
+// if (confirmar) {
+//     titulo.innerText = 'Has clickado OK, necesitamos confirmar su identidad:';
+
+//     let input = document.createElement("input");
+//         <input>Ingrese su</input>
+
     
-         document.body.appendChild(div);
-     }
+//     let div = document.createElement('div');
+  
+//             div.innerHTML = `
+//                 <div class="card">
+//                     <img class="responsive" src="${producto.img}">
+//                     <h3> ${producto.nombre}</h3>
+//                    <p> ID: ${producto.id}</p>
+//                      <b>Precio: $ ${producto.precio}</b>
+//                      <b>Stock: $ ${producto.stock}</b>
+//                  </div>
+//                      `;
+        
+//              document.body.appendChild(div);
 
 
-   
-    } else {
-    alert ('Puede seguir revisando el resto de la página');
-}
+    
+//        let nombre = prompt('Nombres:')
+//        let apellido= prompt ('Apellidos:')
+
+// titulo.innerText = ' Bienvenido Almirante '  + nombre + ' ' +  apellido ;
+
+// const inicio =document.getElementById(app)
+
+
+
+
+
+
+
+
+
+
+
+
+//   /*While if*/
+//   function seleccionUnidad() {
+
+//     let tipoBuque;
+
+// do {
+//     tipoBuque = (prompt("Bienvenido, ha ingresado a la base de datos de la armada, indiquenos que tipo de unidad militar necesita revisar:\n1)Fragata\n2)Submarinos\n3)Destructor"))
+// } while(tipoBuque != 1 && tipoBuque != 2 && tipoBuque != 2)
+
+//     if (tipoBuque == 1){
+//        tipoFragata = (prompt("Fragatas disponibles:\n1)Knox\n2)Oliver Hazard\n3)Duke\n4)Independense"))
+//             if (tipoFragata == 1){
+//                 alert(JSON.stringify(knox, null, 4));  
+//             } else if (tipoFragata == 2){
+//                 alert(JSON.stringify(oliverHazard, null, 4)); 
+//             } else if (tipoFragata == 3){
+//                 alert(JSON.stringify(duke, null, 4)); 
+//             } else if (tipoFragata == 4){
+//                 alert(JSON.stringify(independence, null, 4)); 
+//         }         
+//     } else if (tipoBuque == 2){
+//         tipoSubmarino = (prompt("Submarinos disponibles:\n1)Los Angeles\n2)Trafalgar\n3)Seawolf\n4)Typhoon"))
+//             if (tipoSubmarino == 1){
+//                 alert(JSON.stringify(losAngeles, null, 4));  
+//             } else if (tipoSubmarino == 2){
+//                 alert(JSON.stringify(trafalgar, null, 4)); 
+//             } else if (tipoSubmarino == 3){
+//                 alert(JSON.stringify(seawolf, null, 4)); 
+//             } else if (tipoSubmarino == 4){
+//                 alert(JSON.stringify(typhoon, null, 4)); 
+//         }           
+//     } else if (tipoBuque == 3){
+//         tipoDestructor = (prompt("Destructores disponibles:\n1)Sovremenny\n2)Ticonderoga\n3)Arleigh Burke\n4)Daring"))
+//             if (tipoDestructor == 1){
+//                 alert(JSON.stringify(sovremenny, null, 4));  
+//             } else if (tipoDestructor == 2){
+//                 alert(JSON.stringify(ticonderoga, null, 4)); 
+//             } else if (tipoDestructor == 3){
+//                 alert(JSON.stringify(arleighBurke, null, 4)); 
+//             } else if (tipoDestructor == 4){
+//                 alert(JSON.stringify(daring, null, 4)); 
+//         } 
+// }
+
+// //Metodos y operaciones
+
+// class Producto {
+// constructor (id, nombre, precio, stock){
+//     this.id= id;
+//     this.nombre= nombre;
+//     this.precio= Number(precio);
+//     this.stock= stock;
+// }
+// actualizarStock(cantidad){
+//     this.stock= this.stock - cantidad;
+// }
+// }
+
+// const arrayProductos = [];
+// arrayProductos.push(new Producto (1, 'Knox', 10, 200));
+// arrayProductos.push(new Producto (2, 'Oliver', 35, 100));
+// arrayProductos.push(new Producto (3, 'Duke', 120, 50));
+// arrayProductos.push(new Producto (3, 'Independence', 450, 25));
+
+// //Precio: Menor a MAyor
+// const ordenarMenorMayor = () => {
+// arrayProductos.sort((a,b)=> a.precio - b.precio);
+// mostrarListaOrdenada();
+// }
+
+// //Precio: Mayor a menor
+// const ordenarMayorMenor = () => {
+// arrayProductos.sort((a,b)=> b.precio - a.precio);
+// mostrarListaOrdenada();
+// }
+
+// const mostrarListaOrdenada = () => {
+// let array = [];
+// arrayProductos.forEach(producto => array.push(producto.nombre+" $"+producto.precio + ' Bitcoin'));
+// alert("Lista de precios:"+"\n"+array.join("\n"))
+// }
+
+// const agregarProductos = () => {
+// let otroProducto;
+// let productoNombre = "";
+// let productoCantidad = 0;
+// let total = 0;
+
+// do {
+//     productoNombre = prompt ('Por el momento solo podemos ofrecer fragatas, ¿que desea solicitar?:\na)Knox\nb)Oliver \nc)Duke\nd)Independence');
+//     productoCantidad = parseInt(prompt('¿Cuántos solicitara?'));
+
+//     while (Number.isNaN(productoCantidad)) {
+//         productoCantidad = parseInt(prompt ('¿Cuántos solicitara?'));
+//     }
+
+//     const producto = arrayProductos.find(producto => producto.nombre === productoNombre);
+
+//     if (producto) {
+//         total += producto.precio * productoCantidad;
+//         sincronizarStock(producto.nombre, productoCantidad, producto.stock);
+//     } else {
+//         alert('El producto no se encuentra en el catálogo.')
+//     }
+
+//     otroProducto = confirm('Desea agregar otro buque?');
+// } while (otroProducto)
+
+// obtenerDescuento(total);
+
+// };
+
+// const obtenerDescuento = (total) => {
+// if (total>=5000){
+//     total = total*0.90;
+//     alert("Por rango se aplicara un 10% de descuento");
+// }
+// obtenerPrecioDeEnvio(total);
+// }
+
+// const obtenerPrecioDeEnvio = (total) => {
+// let confirmacion = confirm("¿Se solicita para una misión fuera de nuestro pais?");
+// if (confirmacion && total>=500){
+//     alert("La Industria manufacturera aplica envío gratis por su compra $"+total);
+// }else if (confirmacion && total<500 && total!=0){
+//     total=total+5;
+//     alert("El envío cuesta $700. El total de tu compra asciende a $"+total);
+// }else{
+//     alert("El total de tu compra es $"+total);
+// }
+// }
+
+// const sincronizarStock = (producto, cantidad, stock) => {
+// switch (producto) {
+//     case arrayProductos[0].nombre:
+//         if (cantidad <= stock && arrayProductos[0].stock > 0) {
+//             arrayProductos[0].actualizarStock(cantidad);
+//         } else {
+//             alert("No hay stock suficiente de este producto.")
+//         }
+//         break;
+//     case arrayProductos[1].nombre:
+//         if (cantidad <= stock && arrayProductos[1].stock > 0) {
+//             arrayProductos[1].actualizarStock(cantidad);
+//         } else {
+//             alert("No hay stock suficiente de este producto.")
+//         }
+//         break;
+//     case arrayProductos[2].nombre:
+//         if (cantidad <= stock && arrayProductos[2].stock > 0) {
+//             arrayProductos[2].actualizarStock(cantidad);
+//         } else {
+//             alert("No hay stock suficiente de este producto.")
+//         }
+//         break;
+// }
+// };
+
+// const comprar = () => {
+// if (confirm("¿Desea revisar nuestra lista de buques disponibles en orden de valor?")){
+//     ordenarMenorMayor();
+// }else{
+//     ordenarMayorMenor();
+// }
+// agregarProductos();
+// }
+
+// comprar();
+
+
+
+
+// /*iteracion*/  
+// alert ('Se detecto una manipulación en nuestro registros, por favor presione tres veces aceptar para identificarse como humano');
+
+// for (let i = 3; i > 0; i--) {
+//     alert (i);
+// }
+// }
+
+
+// } else {
+// alert ('Puede seguir revisando el resto de la página');
+// }
+
+// let seleccion = seleccionUnidad (); 
 
