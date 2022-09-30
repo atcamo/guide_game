@@ -52,7 +52,12 @@ const destructores = [sovremenny, ticonderoga, arleighBurke, daring]
 
 const buques = [fragatas, destructores, submarinos] 
 
+
+/*inicio de Logica*/
+
 let formulario = document.getElementById('form');
+
+localStorage.setItem ('parrafo','titulo');
 
 let titulo = document.getElementById('parrafo1');
 
@@ -64,6 +69,18 @@ boton.onclick = () => {
     boton.remove();
     formulario.style.display='block';    
 }
+
+const submit = document.getElementById('enviar');
+
+let nombre = document.getElementById("nombreForm").value;
+
+submit.onclick = () => {
+    titulo.innerText = ' Bienvenido' + nombre ; 
+    form.remove();    
+
+}
+
+
 
 
 // let div = document.createElement('div');

@@ -31,9 +31,23 @@
     </div>
 
     <form id="form">
+        Nombre<br>
         <input id="nombreForm" name="nombre" type="text"><br>
-        <input id="edadForm" name="edad" type="number"><br>
-        <input type="submit" value="Enviar">
+        <br>Rango<br>       
+        <input list="rango" id="rangoForm">
+            <datalist id="rango">
+                <option value="Almirante">
+                <option value="Vicealmirante">
+                <option value="Contraalmirante">
+                <option value="Comodoro">
+                <option value="Capitán">
+                <option value="Subteniente">
+                <option value="Guardiamarina">
+            </datalist>
+            <br>
+            <br>Años de servicio<br>
+        <input id="edadForm" name="edad" type="number"><br><br>
+        <input type="submit" value="Enviar" id="enviar">
     </form>
     
 
