@@ -55,7 +55,10 @@ const buques = [fragatas, destructores, submarinos]
 
 /*inicio de Logica*/
 
-let formulario = document.getElementById('form');
+const formulario = document.getElementById('form');
+const nombre =document.getElementById('name');
+const rango =document.getElementById('rangoForm');
+const servicio =document.getElementById('serv');
 
 localStorage.setItem ('parrafo','titulo');
 
@@ -70,15 +73,17 @@ boton.onclick = () => {
     formulario.style.display='block';    
 }
 
-const submit = document.getElementById('enviar');
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-const form=document
+    console.log(nombre.value);
+    console.log(rango.value);
+    console.log(servicio.value);
+})
 
-submit.onclick = function () {
-    event.preventDefault()
-    URL = './secret.html';
 
-}
+
+
 
 
 
