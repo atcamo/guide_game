@@ -5,6 +5,7 @@ const formulario = document.getElementById('form');
 const nombre =document.getElementById('name');
 const rango =document.getElementById('rangoForm');
 const servicio =document.getElementById('serv');
+const submitB =document.getElementById('botonSubmit');
 
 localStorage.setItem ('parrafo','titulo');
 
@@ -19,18 +20,10 @@ boton.onclick = () => {
     formulario.style.display='block';    
 }
 
-formulario.addEventListener('submit', (event) => {
-    event.preventDefault();
 
-    console.log(nombre.value);
-    console.log(rango.value);
-    console.log(servicio.value);
-})
-
-
-
-
-
+submitB.onclick = () => {
+    parent.location="tienda.html";
+}
 
 
 

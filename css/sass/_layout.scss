@@ -69,15 +69,15 @@
         }
         a {
             text-decoration-line: none;
-             &:hover {
+            &:hover {
                 text-transform: uppercase;
-                 color: white;
+                color: white;
             }
         
         }
 }
 
- 
+
 
 .backNino { 
     background-image: url(/image/backnino.webp);
@@ -95,10 +95,9 @@
     margin-top: 20px ;
     background-color:rgb(45,45,45);
     color:#39ff14;
+}
 
- }
-
- .letra{
+.letra{
     font-family: 'Special Elite', cursive;
     display: block;
     white-space: nowrap;
@@ -115,7 +114,7 @@
     padding:5px;
     max-height: 200px;
     object-fit: contain;
-  }
+}
 
 #form {
     display: none;
