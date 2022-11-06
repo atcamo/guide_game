@@ -22,7 +22,7 @@ boton.onclick = () => {
 
 
 submitB.onclick = () => {
-    parent.location="tienda.html";
+    parent.location="/pages/Juegos/secret/tienda.html";
 }
 
 

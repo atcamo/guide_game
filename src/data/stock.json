@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "nombre": "Knox",
+        "tipo": "Fragata",
+        "precio": 10,
+        "img": "public/images/Knox.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 2,
+        "nombre": "Oliver",
+        "tipo": "Fragata",
+        "precio": 50,
+        "img": "public/images/Oliver.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 3,
+        "nombre": "Duque",
+        "tipo": "Fragata",
+        "precio": 100,
+        "img": "public/images/Duque.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 4,
+        "nombre": "Independence",
+        "tipo": "Fragata",
+        "precio": 160,
+        "img": "public/images/Independence.png",
+        "cantidad":1
+    },
+
+    
+    {
+        "id": 5,
+        "nombre": "Los Angeles",
+        "tipo": "Submarino",
+        "precio": 15,
+        "img": "public/images/Losangeles.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 6,
+        "nombre": "Trafalgar",
+        "tipo": "Submarino",
+        "precio": 65,
+        "img": "public/images/Trafalgar.png",
+        "cantidad":1
+    },
+    
+    {
+        "id": 7,
+        "nombre": "Seawolf",
+        "tipo": "Submarino",
+        "precio": 140,
+        "img": "public/images/Seawolf.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 8,
+        "nombre": "Typhoon",
+        "tipo": "Submarino",
+        "precio": 210,
+        "img": "public/images/Typhoon.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 9,
+        "nombre": "Sovremenny",
+        "tipo": "Destructor",
+        "precio": 12,
+        "img": "public/images/Sovremenny.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 10,
+        "nombre": "Ticonderoga",
+        "tipo": "Destructor",
+        "precio": 60,
+        "img": "public/images/Ticonderoga.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 11,
+        "nombre": "Arleigh Burke",
+        "tipo": "Destructor",
+        "precio": 95,
+        "img": "public/images/Burke.png",
+        "cantidad":1
+    },
+
+    {
+        "id": 12,
+        "nombre": "Daring",
+        "tipo": "Destructor",
+        "precio": 190,
+        "img": "public/images/Daring.png",
+        "cantidad":1
+    }
+]
