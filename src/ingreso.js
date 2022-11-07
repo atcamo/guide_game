@@ -2,9 +2,7 @@
 /*inicio de Logica*/
 
 const formulario = document.getElementById('form');
-const nombre =document.getElementById('name');
-const rango =document.getElementById('rangoForm');
-const servicio =document.getElementById('serv');
+
 const submitB =document.getElementById('botonSubmit');
 
 localStorage.setItem ('parrafo','titulo');
@@ -20,11 +18,9 @@ boton.onclick = () => {
     formulario.style.display='block';    
 }
 
-
 submitB.onclick = () => {
     parent.location="/pages/Juegos/secret/tienda.html";
 }
-
 
 
 

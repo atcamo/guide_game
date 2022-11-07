@@ -80,7 +80,7 @@ const eliminarProductoCarrito = (productoId) => {
 
                     actualizarTotalesCarrito(carritoActualizado);
                     pintarCarrito(carritoActualizado) ;   }      
-                 });
+                });
         const carritoActualizado = carritoStorage.filter(producto => producto.id != productoId);
 
 };
