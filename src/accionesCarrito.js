@@ -90,20 +90,23 @@ const eliminarProductoCarrito = (productoId) => {
 
 const vaciar = document.getElementById('botonVaciar');
 
+
 vaciar.onclick = () => {
+    carrito = [];
     Swal.fire(
         'Carro de Compras',
         'Su carro esta vacio',
         'success'); 
         borrarCarrito;
-    pintarCarrito(actualizarTotalesCarrito(carrito));
-    actualizarTotalesCarrito;
+        pintarCarrito(actualizarTotalesCarrito(carrito));
+        actualizarTotalesCarrito;
 }
 
 
 const comprar = document.getElementById('botonComprar');
 
 comprar.onclick = () => {
+        cerrar;
         Swal.fire(
         'Compra realizada',
         'Nos contactaremos a la brevedad',
