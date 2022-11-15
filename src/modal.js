@@ -9,6 +9,7 @@ abrirCarrito.addEventListener('click', () => {
     modalContenedor.classList.toggle('modal-active')
 });
 
+
 cerrarCarrito.addEventListener('click', () => {
     modalContenedor.classList.toggle('modal-active')
 });
@@ -17,6 +18,7 @@ modalContenedor.addEventListener('click', () => {
     cerrarCarrito.click()
 });
 
+const cerrar = () => {
 modalCarrito.addEventListener('click', (e) => {
     e.stopPropagation();
 
@@ -24,3 +26,6 @@ modalCarrito.addEventListener('click', (e) => {
         eliminarProductoCarrito(e.target.value)
     };
 });
+}
+
+export { cerrar }

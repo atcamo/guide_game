@@ -1,6 +1,8 @@
 import { actualizarTotalesCarrito } from './actualizarCarrito.js';
 import { obtenerCarritoStorage } from './storage.js';
 import { productos } from './stock.js';
+import { borrarCarrito } from './storage.js';
+import { cerrar } from './modal.js';
 
 let carrito = [];
 
@@ -36,6 +38,7 @@ const agregarAlCarrito = (productoId) => {
                     `;
     contenedor.appendChild(div);
     actualizarTotalesCarrito(carrito);
+
 };
 
 // pintarCarrito recibe por parámetro un array de objetos
@@ -85,41 +88,24 @@ const eliminarProductoCarrito = (productoId) => {
 
 };
 
+const vaciar = document.getElementById('botonVaciar');
 
-
-function comprar(botonFinalizarCompra,carrito,arrayJuegos){
-    botonFinalizarCompra.onclick=()=>{
-        if(carrito.length>0){
-            let total=String(actualizarSubtotal(carrito));
-            Swal.fire({
-                title: 'Va a finalizar su compra',
-                text: "Su compra suma un total de $"+total+"ARS , desea continuar?",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#2f2c48',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'FINALIZAR',
-                cancelButtonText: 'CANCELAR'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    for(let producto of carrito){
-                        document.getElementById(producto.nombre).remove();
-                    }
-                    resetearBotonesCompra(arrayJuegos);
-                    carrito.length=0;
-                    actualizarSubtotal(carrito);
-                    Swal.fire({  title:'Gracias por su compra!',
-                    icon: 'success',
-                        confirmButtonColor: '#2f2c48'
-                    })
-                }
-            })
-        }
-        else{
-            mostrarToast("Su carrito se encuentra vacio.",false);
-        }
-    }
+vaciar.onclick = () => {
+    borrarCarrito;
+    pintarCarrito(actualizarTotalesCarrito(carrito));
+    actualizarTotalesCarrito;
 }
+
+
+const comprar = document.getElementById('botonComprar');
+
+comprar.onclick = () => {
+        Swal.fire(
+        'Compra realizada',
+        'Nos contactaremos a la brevedad',
+        'success'); 
+}
+
 
 
 
