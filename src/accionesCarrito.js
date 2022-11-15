@@ -91,7 +91,11 @@ const eliminarProductoCarrito = (productoId) => {
 const vaciar = document.getElementById('botonVaciar');
 
 vaciar.onclick = () => {
-    borrarCarrito;
+    Swal.fire(
+        'Carro de Compras',
+        'Su carro esta vacio',
+        'success'); 
+        borrarCarrito;
     pintarCarrito(actualizarTotalesCarrito(carrito));
     actualizarTotalesCarrito;
 }
